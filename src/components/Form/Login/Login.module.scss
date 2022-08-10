@@ -1,46 +1,63 @@
-.wrapper{
-    max-height: 700px;
-    min-width: 600px;
-    max-width: 700px;
-    padding:40px;
-    background-color:#fff;
-    font-family: 'Roboto', sans-serif;
-    border-radius: 30px;
-    font-size: 1rem;
-    box-shadow: 1px 1px 10px 5px rgba(63, 62, 62, 0.4);
-    & .form-title{
-        text-align: center;
-        margin-bottom: 20px;
-    }
-    & .input-info{
-        font-size: 0.4rem;
-        margin-bottom: 20px;
-        color: rgb(116, 110, 110);
-        * {
-            display: block;
-        }
-        input{
-            border-top: none;
-            border-right: none;
-            border-left: none;
-            padding:10px;
-            width: 100%;
-            outline:none;
-        }
-    }
-}
-.alternative-login{
-    font-size: 0.4rem;
+.wrapper {
+  max-height: 700px;
+  min-width: 600px;
+  max-width: 700px;
+  padding: 40px;
+  background-color: #fff;
+  font-family: "Roboto", sans-serif;
+  border-radius: 30px;
+  font-size: 1rem;
+  box-shadow: 1px 1px 10px 5px rgba(63, 62, 62, 0.4);
+  & .form-title {
     text-align: center;
-    margin-top:20px;
+    margin-bottom: 20px;
+  }
+  & .input-info {
+    font-size: 0.4rem;
+    margin-bottom: 20px;
+    color: rgb(116, 110, 110);
+    * {
+      display: block;
+    }
+    input {
+      border-top: none;
+      border-right: none;
+      border-left: none;
+      padding: 10px;
+      width: 100%;
+      outline: none;
+      background-color: transparent !important;
+    }
+  }
 }
-.alternative-social-media{
+.alternative-login {
+  font-size: 0.4rem;
+  text-align: center;
+  margin-top: 20px;
+}
+.alternative-social-media {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  .btn-login {
+    border-radius: 20px;
+    border: none;
     display: flex;
-    justify-content:center;
-    & .google-dep{
-        color:red;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 0.4rem;
+    padding: 10px;
+    width: 100%;
+    color: #fff;
+    &:hover {
+      box-shadow: 1px 1px 3px 4px rgba(63, 62, 62, 0.4);
     }
-    & .facebook-dep{
-        color:blue;
-    }
+  }
+  .google-login {
+    background-color: red;
+  }
+  .facebook-login {
+    background-color: rgb(73, 73, 223);
+  }
 }
