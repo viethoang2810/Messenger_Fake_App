@@ -1,6 +1,6 @@
 .wrapper {
   max-height: 700px;
-  min-width: 600px;
+  min-width: 300px;
   max-width: 700px;
   padding: 40px;
   background-color: #fff;
@@ -48,7 +48,6 @@
     cursor: pointer;
     font-size: 0.4rem;
     padding: 10px;
-    width: 100%;
     color: #fff;
     &:hover {
       box-shadow: 1px 1px 3px 4px rgba(63, 62, 62, 0.4);
@@ -59,5 +58,19 @@
   }
   .facebook-login {
     background-color: rgb(73, 73, 223);
+  }
+}
+// Hanle errors style
+.errorMsg{
+  font-size: 0.3rem;
+  color: red;
+}
+@media screen and (max-width: 700px) {
+  .alternative-social-media{
+    display: block;
+    * {
+      margin-bottom: 10px;
+      display: block;
+    }
   }
 }
