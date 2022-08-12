@@ -1,0 +1,15 @@
+.wrapper{
+    display: flex;
+    height: 100vh;
+    
+    & .list-user{
+        width: calc(100% - (70% + 100px));
+        height: 100%;
+        background-color:black;
+    }
+    & .chat-box{
+        width: calc(100% - (10% + 100px));
+        height: 100%;
+        background-color:white;
+    }
+}

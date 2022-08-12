@@ -3,16 +3,17 @@ import styles from "./Login.module.scss";
 import Button from "../../Button/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faGooglePlus } from "@fortawesome/free-brands-svg-icons";
-import { authentication } from "../../Firbase/Config";
-import { signInWithPopup, FacebookAuthProvider } from "firebase/auth";
+import { auth } from "../../Firbase/Config";
+import { signInWithPopup, FacebookAuthProvider, GoogleAuthProvider } from "firebase/auth";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { useNavigate } from "react-router-dom";
+import { UserAuth } from "../../Firbase/GoogleAuth";
 
 const cx = classNames.bind(styles);
 
 function Login() {
-
-
+  const navigation = useNavigate();
   const formik = useFormik({
     initialValues: {
       username: "",
@@ -20,8 +21,8 @@ function Login() {
     },
     validationSchema: Yup.object({
       username: Yup.string()
-                .required("Required")
-                .min(7,'Must be contain at least 7 letters'),
+        .required("Required")
+        .min(7, "Must be contain at least 7 letters"),
       password: Yup.string().required("Required"),
     }),
     onSubmit: (values) => {
@@ -31,15 +32,28 @@ function Login() {
 
   const loginWithFacebook = () => {
     const provider = new FacebookAuthProvider();
-    signInWithPopup(authentication, provider)
+    signInWithPopup(auth, provider)
       .then((res) => {
-        console.log(res);
+        navigation("/home");
       })
       .catch((err) => {
         console.log(err);
       });
   };
 
+  const hanleSignInWithGoogle = async () => {
+    // const { googleSignIn } = UserAuth();
+    // try {
+    //   await googleSignIn();
+    // } catch (error) {
+    //   console.log(error);
+    // }
+    const provider = new GoogleAuthProvider();
+    signInWithPopup(auth, provider)
+    .then((res) => {
+      navigation('/home')
+    })
+  };
   console.log(formik.errors.username);
   return (
     <div className={cx("wrapper")}>
@@ -55,7 +69,9 @@ function Login() {
             onChange={formik.handleChange}
             value={formik.values.username}
           />
-          {formik.errors.username ? (<p className={cx('errorMsg')}>{formik.errors.username}</p>) : null}
+          {formik.errors.username ? (
+            <p className={cx("errorMsg")}>{formik.errors.username}</p>
+          ) : null}
         </div>
         <div className={cx("input-info")}>
           <label>Password</label>
@@ -67,12 +83,17 @@ function Login() {
             onChange={formik.handleChange}
             value={formik.values.password}
           />
-          {formik.errors.password ? (<p className={cx('errorMsg')}>{formik.errors.password}</p>) : null}
+          {formik.errors.password ? (
+            <p className={cx("errorMsg")}>{formik.errors.password}</p>
+          ) : null}
         </div>
         <Button primary children="Login" />
         <h5 className={cx("alternative-login")}>Or login with</h5>
         <div className={cx("alternative-social-media")}>
-          <button className={cx("btn-login", "google-login")}>
+          <button
+            className={cx("btn-login", "google-login")}
+            onClick={hanleSignInWithGoogle}
+          >
             <span>Login with Google</span>
             <FontAwesomeIcon icon={faGooglePlus} className={cx("google-dep")} />
           </button>
