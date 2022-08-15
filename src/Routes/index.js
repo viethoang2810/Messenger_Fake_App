@@ -1,14 +1,20 @@
 import { routes } from "./Route";
-import  ChatRoom  from "../components/ChatRoom/index";
-import Login from '../components/Form/Login/index'
+import HomePage from '../Page/Home';
+import Profile from '../Page/Profile';
+import DefaultLayout from '../components/Layout/DefaultLayout/DefaultLayout'
 const publicRoutes = [
   {
     path: routes.home,
-    component: ChatRoom,
+    component: HomePage,
+  },
+  {
+    path: routes.profile,
+    component: Profile,
   },
   {
     path: routes.login,
-    component:Login,
+    component:DefaultLayout,
+    default:true
   },
 ];
 
