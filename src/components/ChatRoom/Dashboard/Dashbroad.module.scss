@@ -1,0 +1,65 @@
+.wrapper {
+  margin: 10px 0;
+  font-family: Public Sans, sans-serif;
+  & .dashbroad-title {
+    font-weight: 400;
+    font-size: 0.6rem;
+    margin-top: 15px;
+  }
+  & .dashbroad-item {
+    width: 100%;
+    & .dashbroad-search {
+      width: 100%;
+      margin-top: 20px;
+      padding: 0 20px;
+      position: relative;
+      justify-content: space-between;
+      align-items: center;
+      display: flex;
+      position: relative;
+      & .search-input {
+        width: 100%;
+        padding: 15px 50px;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        background-color: rgba(102, 98, 98, 0.3);
+        font-size: 0.3rem;
+      }
+
+      & .search-icon {
+        font-size: 0.5rem;
+        position: absolute;
+        left: 30px;
+        bottom: 10px;
+      }
+    }
+  }
+   
+    
+}
+
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  display: none;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(112, 110, 110);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(112, 110, 110);
+}

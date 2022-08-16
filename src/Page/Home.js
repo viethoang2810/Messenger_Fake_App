@@ -1,6 +1,8 @@
+import Dashbroad from "../components/ChatRoom/Dashboard/Dashbroad";
+
 function DefaultPage() {
     return ( 
-        <h2>This is chat page</h2>
+        <Dashbroad />
      );
 }
 

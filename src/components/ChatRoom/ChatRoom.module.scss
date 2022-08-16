@@ -6,8 +6,9 @@
         width: calc(100% - (70% + 100px));
         height: 100%;
         background-color:white;
-        border-left: 2px solid rgb(130, 122, 122);
-        border-right: 2px solid rgb(130, 122, 122);
+        border-left: 2px solid rgba(130, 122, 122,0.5);
+        border-right: 2px solid rgba(130, 122, 122,0.5);
+        padding: 0 10px;
 
     }
     & .chat-box{

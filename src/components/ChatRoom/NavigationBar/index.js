@@ -9,6 +9,7 @@ import {
   faHouse,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
+import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import MenuItem from "./Menu/MenuItem";
 import MenuWrapper from "./Menu/MenuWrapper/Wrapper";
 const cx = classNames.bind(styles);
@@ -27,6 +28,7 @@ function NavigationBar() {
         <MenuItem icon={faUser} to="/profile" title={"Profile"} />
       </MenuWrapper>
       <div className={cx("menu-navigation")}>
+        <MenuItem icon={faGlobe} to="/setting" title={"Languages"} />
         <MenuItem icon={faGear} to="/setting" title={"Setting"} />
       </div>
     </div>
